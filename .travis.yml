@@ -29,3 +29,4 @@ install: true
 script: 
   - mvn docker:start
   - ./start.sh
+  - echo $HOST_IP

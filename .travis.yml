@@ -8,6 +8,10 @@ sudo: required
 jdk:
   - oraclejdk8
 
+env:
+  - source=maxwell
+  - source=debezium
+
 services:
   - docker
 
@@ -24,4 +28,4 @@ before_install:
 install: true
 
 script: 
-  - start.sh
+  - echo $SOURCE

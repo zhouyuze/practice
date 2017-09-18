@@ -13,10 +13,7 @@ services:
 
 
 before_install:
-  - sudo service mysql-5.6 stop || sudo service mysql stop
-  - sudo /etc/init.d/postgresql stop
-  - docker -v
-  - docker ps -a
+  - mvn -version
   - wget https://archive.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.zip
   - unzip -qq apache-maven-3.3.9-bin.zip
   - export M2_HOME=$PWD/apache-maven-3.3.9
@@ -27,6 +24,4 @@ before_install:
 install: true
 
 script: 
-  - mvn docker:start
-  - ./start.sh
-  - echo $HOST_IP
+  - start.sh

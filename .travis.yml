@@ -19,7 +19,7 @@ before_install:
   - mvn -version
   - python --version
   - sudo apt-get install python
-  - pip install MySQL-python
+  - sudo pip install MySQL-python
 
 install: true
 

@@ -18,6 +18,7 @@ services:
 before_install:
   - mvn -version
   - python --version
+  - sudo apt-get install python
   - pip install MySQL-python
 
 install: true

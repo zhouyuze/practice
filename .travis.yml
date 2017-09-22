@@ -8,21 +8,20 @@ sudo: required
 jdk:
   - oraclejdk8
 
-env:
-  - source=maxwell
-
 services:
   - docker
 
-
 before_install:
-  - mvn -version
-  - python --version
-  - sudo apt-get install python
-  - sudo pip install MySQL-python 
-  - sudo pip install psycopg2
+  - sudo service mysql-5.6 stop || sudo service mysql stop
+  - sudo /etc/init.d/postgresql stop
+  - sudo apt-get install jsvc
+  - sudo pip install MySQL-python
 
 install: true
 
-script: 
-  - echo $SOURCE
+script:
+  - ./connect.sh
+
+after_script:
+  - mvn clean
+  - docker stop $(docker -a -q)

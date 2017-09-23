@@ -1,2 +1,2 @@
 print "test exit error"
-exit(1)
+raise Exception("aa")

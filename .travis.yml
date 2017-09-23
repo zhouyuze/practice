@@ -24,4 +24,4 @@ script:
 
 after_script:
   - mvn clean
-  - docker stop $(docker -a -q)
+  - python test_exit.py
